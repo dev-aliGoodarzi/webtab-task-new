@@ -100,6 +100,11 @@ app.use(
 // #region demoRoutes V1
 app.use("/demo", AdminRoutes);
 app.use("/demo", DemoDataRoutes);
+app.use("*", (req, res) => {
+  res.status(404).send({
+    data: "NOT_FOUND_DESIRED_ROUTE",
+  });
+});
 /*
  *
  *

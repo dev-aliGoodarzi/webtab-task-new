@@ -91,6 +91,11 @@ app.use("/documentation/swagger-ui", swagger_ui_express_1.default.serve, swagger
 // #region demoRoutes V1
 app.use("/demo", AdminRoutesIndex_1.AdminRoutes);
 app.use("/demo", DemoDataRoutes_1.DemoDataRoutes);
+app.use("*", (req, res) => {
+    res.status(404).send({
+        data: "NOT_FOUND_DESIRED_ROUTE",
+    });
+});
 /*
  *
  *
