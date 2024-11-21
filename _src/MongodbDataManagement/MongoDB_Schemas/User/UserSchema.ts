@@ -27,5 +27,7 @@ export const UserSchema = new mongoose.Schema<T_UserSchema>({
   userId: String,
   isRegisterCompleted: Boolean,
   loginTryCount: Number,
+  bpmnTryCount: Number,
+  formIoTryCount: Number,
   role: String, // ADMIN | NORMAL_USER
 });

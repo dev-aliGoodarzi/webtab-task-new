@@ -16,5 +16,7 @@ exports.UserSchema = new mongoose_1.default.Schema({
     userId: String,
     isRegisterCompleted: Boolean,
     loginTryCount: Number,
+    bpmnTryCount: Number,
+    formIoTryCount: Number,
     role: String, // ADMIN | NORMAL_USER
 });
