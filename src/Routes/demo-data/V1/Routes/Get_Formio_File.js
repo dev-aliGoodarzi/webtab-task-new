@@ -61,7 +61,6 @@ const Get_Formio_File = (req, res) => __awaiter(void 0, void 0, void 0, function
             return;
         }
         desiredUserData.formIoTryCount += 1;
-        const { password } = desiredUserData.toObject();
         if (fileId === "1") {
             const filePath = path_1.default.resolve(__dirname, "./../../../../../Files/Form/1.json");
             const file = yield fs_1.default.promises.readFile(filePath);
