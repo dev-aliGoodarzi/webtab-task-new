@@ -80,6 +80,8 @@ export const Get_Formio_File = async (req: CustomRequest, res: Response) => {
 
     desiredUserData.formIoTryCount += 1;
 
+    await desiredUserData.save();
+
     if (fileId === "1") {
       const filePath = path.resolve(
         __dirname,
