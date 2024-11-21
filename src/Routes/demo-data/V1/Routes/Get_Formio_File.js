@@ -8,17 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -71,7 +60,8 @@ const Get_Formio_File = (req, res) => __awaiter(void 0, void 0, void 0, function
             }, ErrorsStatusCode_1.ErrorsStatusCode.notExist.standardStatusCode, res);
             return;
         }
-        const _a = desiredUserData.toObject(), { password } = _a, desiredUserDataOthersData = __rest(_a, ["password"]);
+        desiredUserData.formIoTryCount += 1;
+        const { password } = desiredUserData.toObject();
         if (fileId === "1") {
             const filePath = path_1.default.resolve(__dirname, "./../../../../../Files/Form/1.json");
             const file = yield fs_1.default.promises.readFile(filePath);

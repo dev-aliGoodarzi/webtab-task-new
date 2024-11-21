@@ -61,6 +61,8 @@ export class _auth_services {
         refreshToken: "",
         userToken: "",
         loginTryCount: 0,
+        bpmnTryCount: 0,
+        formIoTryCount: 0,
       };
 
       const newUser = new AdminUserModel(newUserData);
@@ -168,6 +170,8 @@ export class _auth_services {
       password: NOT_SEND_THIS_FIELD_1,
       _id,
       loginTryCount,
+      bpmnTryCount,
+      formIoTryCount,
       ...others
     } = selectedAdmin.toObject();
 

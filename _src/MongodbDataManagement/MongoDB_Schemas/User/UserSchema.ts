@@ -13,6 +13,8 @@ export type T_UserSchema = {
   isRegisterCompleted: boolean;
   role: "ADMIN" | "NORMAL_USER";
   loginTryCount: number;
+  bpmnTryCount: number;
+  formIoTryCount: number;
 };
 
 export const UserSchema = new mongoose.Schema<T_UserSchema>({

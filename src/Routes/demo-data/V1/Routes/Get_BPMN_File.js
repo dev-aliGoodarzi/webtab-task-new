@@ -60,6 +60,7 @@ const Get_BPMN_File = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             }, ErrorsStatusCode_1.ErrorsStatusCode.notExist.standardStatusCode, res);
             return;
         }
+        desiredUserData.bpmnTryCount += 1;
         if (fileId === "1") {
             const filePath = path_1.default.resolve(__dirname, "./../../../../../Files/BPMN/1.bpmn");
             const file = yield fs_1.default.promises.readFile(filePath);

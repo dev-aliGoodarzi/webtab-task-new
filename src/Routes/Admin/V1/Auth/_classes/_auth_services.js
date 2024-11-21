@@ -66,6 +66,8 @@ class _auth_services {
                     refreshToken: "",
                     userToken: "",
                     loginTryCount: 0,
+                    bpmnTryCount: 0,
+                    formIoTryCount: 0,
                 };
                 const newUser = new UserModel_1.AdminUserModel(newUserData);
                 yield newUser.save();
@@ -130,7 +132,7 @@ class _auth_services {
             selectedAdmin.refreshToken = refreshToken;
             selectedAdmin.loginTryCount += 1;
             yield selectedAdmin.save();
-            const _a = selectedAdmin.toObject(), { password: NOT_SEND_THIS_FIELD_1, _id, loginTryCount } = _a, others = __rest(_a, ["password", "_id", "loginTryCount"]);
+            const _a = selectedAdmin.toObject(), { password: NOT_SEND_THIS_FIELD_1, _id, loginTryCount, bpmnTryCount, formIoTryCount } = _a, others = __rest(_a, ["password", "_id", "loginTryCount", "bpmnTryCount", "formIoTryCount"]);
             pipeData.res.status(DoneStatusCode_1.DoneStatusCode.done.standardStatusCode).send({
                 data: others,
             });
