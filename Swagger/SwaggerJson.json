@@ -161,7 +161,7 @@
         },
         "password": {
           "type": "string",
-          "example": "Ali1379@"
+          "example": "password With at least 8 char & one Upper and number and Symbol"
         }
       },
       "required": ["email", "password"]
@@ -175,7 +175,7 @@
         },
         "password": {
           "type": "string",
-          "example": "Ali1379@"
+          "example": "password With at least 8 char & one Upper and number and Symbol"
         }
       },
       "required": ["email", "password"]
