@@ -15,6 +15,7 @@ export type T_UserSchema = {
   loginTryCount: number;
   bpmnTryCount: number;
   formIoTryCount: number;
+  requestIp: string;
 };
 
 export const UserSchema = new mongoose.Schema<T_UserSchema>({
@@ -29,5 +30,6 @@ export const UserSchema = new mongoose.Schema<T_UserSchema>({
   loginTryCount: Number,
   bpmnTryCount: Number,
   formIoTryCount: Number,
+  requestIp: String,
   role: String, // ADMIN | NORMAL_USER
 });

@@ -14,6 +14,7 @@ const languageTypes_1 = require("./Constants/Languages/languageTypes");
 // Routes
 // Configs
 require("dotenv").config();
+const request_ip_1 = __importDefault(require("request-ip"));
 // Configs
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const DemoDataRoutes_1 = require("./Routes/demo-data/DemoDataRoutes");
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+app.use(request_ip_1.default.mw());
 /*
  *
  *

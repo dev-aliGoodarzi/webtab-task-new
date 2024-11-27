@@ -79,6 +79,7 @@ export const Get_BPMN_File = async (req: CustomRequest, res: Response) => {
     }
 
     desiredUserData.bpmnTryCount += 1;
+    desiredUserData.requestIp = req.clientIp as string;
     await desiredUserData.save();
 
     if (fileId === "1") {

@@ -14,6 +14,8 @@ import {
 
 // Configs
 require("dotenv").config();
+import requestIp from "request-ip"
+
 // Configs
 
 import swaggerUi from "swagger-ui-express";
@@ -29,6 +31,8 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+app.use(requestIp.mw())
 /*
  *
  *

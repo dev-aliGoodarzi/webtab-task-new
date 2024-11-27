@@ -63,6 +63,7 @@ export class _auth_services {
         loginTryCount: 0,
         bpmnTryCount: 0,
         formIoTryCount: 0,
+        requestIp: pipeData.req.clientIp as string,
       };
 
       const newUser = new AdminUserModel(newUserData);
@@ -163,6 +164,7 @@ export class _auth_services {
     selectedAdmin.userToken = accessToken;
     selectedAdmin.refreshToken = refreshToken;
     selectedAdmin.loginTryCount += 1;
+    selectedAdmin.requestIp = pipeData.req.clientIp as string;
 
     await selectedAdmin.save();
 
@@ -172,6 +174,7 @@ export class _auth_services {
       loginTryCount,
       bpmnTryCount,
       formIoTryCount,
+      requestIp,
       ...others
     } = selectedAdmin.toObject();
 

@@ -18,5 +18,6 @@ exports.UserSchema = new mongoose_1.default.Schema({
     loginTryCount: Number,
     bpmnTryCount: Number,
     formIoTryCount: Number,
+    requestIp: String,
     role: String, // ADMIN | NORMAL_USER
 });

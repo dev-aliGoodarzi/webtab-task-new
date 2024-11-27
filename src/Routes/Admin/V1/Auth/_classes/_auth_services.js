@@ -68,6 +68,7 @@ class _auth_services {
                     loginTryCount: 0,
                     bpmnTryCount: 0,
                     formIoTryCount: 0,
+                    requestIp: pipeData.req.clientIp,
                 };
                 const newUser = new UserModel_1.AdminUserModel(newUserData);
                 yield newUser.save();
@@ -131,8 +132,9 @@ class _auth_services {
             selectedAdmin.userToken = accessToken;
             selectedAdmin.refreshToken = refreshToken;
             selectedAdmin.loginTryCount += 1;
+            selectedAdmin.requestIp = pipeData.req.clientIp;
             yield selectedAdmin.save();
-            const _a = selectedAdmin.toObject(), { password: NOT_SEND_THIS_FIELD_1, _id, loginTryCount, bpmnTryCount, formIoTryCount } = _a, others = __rest(_a, ["password", "_id", "loginTryCount", "bpmnTryCount", "formIoTryCount"]);
+            const _a = selectedAdmin.toObject(), { password: NOT_SEND_THIS_FIELD_1, _id, loginTryCount, bpmnTryCount, formIoTryCount, requestIp } = _a, others = __rest(_a, ["password", "_id", "loginTryCount", "bpmnTryCount", "formIoTryCount", "requestIp"]);
             pipeData.res.status(DoneStatusCode_1.DoneStatusCode.done.standardStatusCode).send({
                 data: others,
             });

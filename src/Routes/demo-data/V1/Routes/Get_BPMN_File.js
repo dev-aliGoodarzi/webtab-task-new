@@ -61,6 +61,7 @@ const Get_BPMN_File = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             return;
         }
         desiredUserData.bpmnTryCount += 1;
+        desiredUserData.requestIp = req.clientIp;
         yield desiredUserData.save();
         if (fileId === "1") {
             const filePath = path_1.default.resolve(__dirname, "./../../../../../Files/BPMN/1.bpmn");

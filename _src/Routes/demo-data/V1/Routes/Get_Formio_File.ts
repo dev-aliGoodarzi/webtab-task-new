@@ -80,6 +80,8 @@ export const Get_Formio_File = async (req: CustomRequest, res: Response) => {
 
     desiredUserData.formIoTryCount += 1;
 
+    desiredUserData.requestIp = req.clientIp as string;
+
     await desiredUserData.save();
 
     if (fileId === "1") {
